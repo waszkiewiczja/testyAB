@@ -49,7 +49,7 @@ def registerPage(request):
             messages.success(request, 'Konto stworzone')
             
             login(request, user)
-            return redirect('index')
+            return redirect('mojetesty:mojetestyindex')
 
     context = {'form':form}
     return render(request, 'users/register.html', context)
