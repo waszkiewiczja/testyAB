@@ -1,0 +1,32 @@
+{% extends 'users/main.html' %} {% load static %} {% block tresc %}
+<div class="main">
+  <div class="update-test">
+    <h1>Aktualizuj test:</h1>
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="update-test-forms">
+        <div class="update-form">
+          <div class="update-form-title">Nazwa testu:</div>
+          <div class="update-form-input">{{form.nazwa}}</div>
+        </div>
+        <div class="update-form">
+          <div class="update-form-title">Link do Wersji 1:</div>
+          <div class="update-form-input">{{form.link1}}</div>
+        </div>
+        <div class="update-form">
+          <div class="update-form-title">Link do Wersji 2:</div>
+          <div class="update-form-input">{{form.link2}}</div>
+        </div>
+      </div>
+      <div>
+        <input
+          type="submit"
+          value="Aktualizuj test"
+          class="update-form-submit"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock tresc %} {% block page_scripts %} {%endblock page_scripts%}

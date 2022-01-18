@@ -1,0 +1,16 @@
+{% extends 'users/main.html' %} {% load static %} {% block tresc %}
+<div class="main">
+  <div class="delete-test">
+    <h1>Usuń test</h1>
+    <div class="delete-test-forms">
+      Chcesz skasować '{{test.nazwa}}'?
+      <form method="POST" action="">
+        {% csrf_token %}
+        <div>
+          <input type="submit" value="Potwierdź" class="update-form-submit" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock tresc %} {% block page_scripts %} {%endblock page_scripts%}

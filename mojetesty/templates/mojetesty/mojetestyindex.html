@@ -1,0 +1,33 @@
+{% extends 'users/main.html' %} {% load static %} {% block tresc %}
+<div class="main">
+  <div class="recap">
+    <h1>Moje testy:</h1>
+
+    <div class="recap-content">
+      <div class="recap-content-title">
+        <div>Nazwa</div>
+        <div>Data utworzenia</div>
+        <div class="recap-edit-links">Wyświetlenia</div>
+        <div class="recap-edit-links">Szczegóły</div>
+        <div class="recap-edit-links">Edytuj</div>
+        <div class="recap-edit-links">Usuń</div>
+      </div>
+
+      {% for test in tests %} {% if request.user == test.user%}
+      <div class="recap-content-loop">
+        <div>{{test.nazwa}}</div>
+        <div>{{test.timestamp}}</div>
+        <div>{{test.suma_wyswietlenia_linkow}}</div>
+        <div><a href="{% url 'mojetesty:szczegol' test.id%}">Wyniki </a></div>
+        <div><a href="{% url 'mojetesty:aktualizuj' test.id%}">Edytuj </a></div>
+        <div><a href="{% url 'mojetesty:usun' test.id%}">Usuń </a></div>
+      </div>
+
+      {%endif%} {%endfor%}
+    </div>
+
+    <hr />
+    <a href="{% url 'mojetesty:create-new-test'%}"><h2>Utwórz test</h2> </a>
+  </div>
+</div>
+{% endblock tresc %} {% block page_scripts %} {%endblock page_scripts%}

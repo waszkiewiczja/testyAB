@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Przeprowadź testy AB</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{%  static 'users/wyglad/dolar.svg' %}" />
+    <link rel="stylesheet" href="{% static 'users/wyglad/style.css' %}" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="container">
+        <div class="split-left">
+          <h1>
+            Jak zwiększyć sprzedaż w<br />
+            Internecie o 37% ?
+          </h1>
+          <br />
+          <div class="btn">Sprawdź Teraz</div>
+        </div>
+        <div class="split-right">
+          <h1>GWARANTOWANE: Zwiększysz <br />sprzedaż o 37%</h1>
+          <br />
+          <div class="btn">Kliknij Tutaj</div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="main-content-body">
+          <div class="single-thread">
+            <hr class="hrline" />
+            <h1 id="body-top-header">
+              Jedna strona a tysiące różnych użytkowników.<br />
+              To nie może działać.
+            </h1>
+            <p>
+              Na twoją stronę wchodzi tysiące różnych ludzi. Młodzi, studenci, w
+              średnik wieku, starsi. Biedni, średnio zamożni i bogaci. Biegli w
+              obsłudze komputera i bardzo przeciętni. Z wykształceniem niższym,
+              średnim i wyższym. Po zawodówce i najlepszych uczelniach. Z
+              doskonałym wzrokiem i ledwo widzących.<br /><br />
+              Dla tych wszystkich różnych osób masz taką samą stronę? To nie
+              może dobrze działać. Twoja strona powinna być dostosowana do wielu
+              różnych grup odbiorców. Jedna strona ale wiele różnych wersji.
+              Nasze oprogramowanie pozwala stworzyć wiele wersji tej samej
+              jednej strony i zmierzyć która wersja działa lepiej.
+            </p>
+
+            <div class="main-project-photo" id="anime-static">
+              <img src="{% static 'users/wyglad/ab2.png' %}" class="photo" />
+            </div>
+
+            <div class="anime-main">
+              <div class="anime-all">
+                <div class="anime-top">
+                  <img src="{% static 'users/wyglad/klik3.png' %}" />
+                </div>
+                <div class="anime-wrapper">
+                  <div id="anime-emoji"></div>
+                  <div id="anime-emoji2"></div>
+
+                  <svg id="anime-svg" viewBox="0 0 800 200">
+                    <path
+                      id="anime-p1"
+                      stroke="rgb(234,241,255)"
+                      stroke-width="20px"
+                      fill="none"
+                      d="M 400 0 L 400 100 Q 400 150 250 150 Q 200 150 200 200 "
+                    ></path>
+
+                    <path
+                      id="anime-p2"
+                      stroke="rgb(234,241,255)"
+                      stroke-width="20px"
+                      fill="none"
+                      d="M 400 0 L 400 100 Q 400 150 550 150 Q 600 150 600 200 "
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="anime-bottom">
+                  <img
+                    class="anime-img-1800 photo"
+                    src="{% static 'users/wyglad/os850.png'%}"
+                    alt=""
+                  />
+                  <img
+                    class="anime-img-1400 photo"
+                    src="{% static 'users/wyglad/os60.png' %}"
+                    alt=""
+                  />
+                  <img
+                    class="anime-img-1050 photo"
+                    src="{% static 'users/wyglad/os500.png' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="anime-wrapper2">
+                  <div id="anime-emoji3"></div>
+                  <div id="anime-emoji4"></div>
+                  <svg id="anime-svg2" viewBox="0 0 800 200">
+                    <path
+                      id="anime-p3"
+                      stroke="rgb(234,241,255)"
+                      stroke-width="20px"
+                      fill="none"
+                      d="M 200 0 Q 200 50 250 50 Q 400 50 400 100 L 400 200 "
+                    ></path>
+
+                    <path
+                      id="anime-p4"
+                      stroke="rgb(234,241,255)"
+                      stroke-width="20px"
+                      fill="none"
+                      d="M 600 0 Q 600 50 550 50 Q 400 50 400 100 L 400 200 "
+                    ></path>
+                  </svg>
+                </div>
+                <div class="anime-bottom">
+                  <img src=" {% static 'users/wyglad/ow60.png' %}" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-thread">
+            <h1>Czym jest konwersja?</h1>
+            <p>
+              Wpółczynnik konwersji to procent odwiedzających, którzy przechodzą
+              do określonego celu na stronie. Ten diagram to ilustruje:
+            </p>
+            <img
+              src="{% static 'users/wyglad/konwersja2.png' %}"
+              alt=""
+              class="photo"
+            />
+            <p>
+              1. 'Treść strony' może być dowolną wiadomością lub dowolnym
+              interfejsem użytkownika. Może to być strona landing page, jak i
+              strona potwierdzenia płatności, film instruktażowy, karta
+              zgłoszenia gwarancyjnego, która jest dostarczana z produktem,
+              e-mail z prośbą o polecanie znajomych, czy skrypt sprzedażowy.
+
+              <br />
+              <br />
+
+              2. 'Celem' jest często maksymalizacja sprzedaży – ale nie zawsze.
+              Celem nowych portali na wczesnym etapie może być na przykład
+              nabywanie nowych niepłacących użytkowników. Celem artykułu z bazy
+              wiedzy może być aby zminimalizować liczbę klientów, którzy muszą
+              zadzwonić do obsługi klienta, dzięki czemu pracownicy call center
+              mają mniej pracy. Zawsze celem jest optymalizacja treści
+              dotyczącej tego, do czego została stworzona. Treść istnieje po to,
+              aby wykonać pracę, więc treść ta musi być doskonała w tę pracę.
+            </p>
+          </div>
+
+          <div class="single-thread">
+            <h1>Czym są testy AB?</h1>
+            <p>
+              Testy A/B to skuteczny sposób na zwiększenie współczynnika
+              konwersji. Oto jak to działa: Gdybyś miał dwa możliwe nagłówki na
+              swojej stronie internetowej ale nie mogł zdecydować, którego użyć,
+              możesz przeprowadzić test A/B w którym<br /><br />
+              • połowa odwiedzających zobaczy nagłówek A, oraz <br />
+              • druga połowa zobaczy nagłówek B. <br /><br />
+              Można wtedy zliczyć zamówienia dla każdego nagłówka i określić,
+              który nagłówek przyniósł Ci większą wartość. Oprogramowanie do
+              testów A/B ułatwia przeprowadzanie takich testów. Każdy z Twoich
+              odwiedzających zobaczy inną wersję strona — wersję A lub wersję B,
+              a nawet wersję C, D lub E — a następnie oprogramowanie określi,
+              który z wariantów spisał się najlepiej. W większości testów,
+              wersja A to istniejąca wersja, często nazywana "kontrolną", którą
+              próbujesz pokonać. Wersje B,C czy D nazwyamy wersjami
+              "testowymi".<br /><br />
+              Większość marketingu opiera się na samych opiniachm, a Testy A/B
+              ujawniają prawdę. Jeśli wersja testowa nie daje jednoznacznego
+              zwycięstwa, to nic się nie dzieje - uczysz się z tego i odrzucasz
+              przegraną zmianę.
+            </p>
+          </div>
+
+          <div class="single-thread">
+            <h1>Hasło reklamowe ma gigantyczne znaczenie</h1>
+            <p>
+              Strony, które odnoszą największe sukcesy, skupiają się na
+              klientach. Projektowanie zorientowane na klienta było – i nadal
+              jest – zaskakująco rzadkie. Odpowiednie dobranie głównego nagłówka
+              strony pozwala zwiększyć konwersję nawet o 87%.
+              <br /><br />
+              W Internecie wygrywają witryny zorientowane na klienta i
+              zoptymalizowane pod kątem klienta. Klienci je lubią, odwiedzają
+              często i dużo wydają.
+              <br /><br />
+              Poniższy wykres przedstawia Liczbę konwersji w danym dniu w
+              zależności od wersji wyświetlanej strony:
+            </p>
+            <div class="chart-box">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+
+          <div class="single-thread">
+            <h1>Przeprowadź swoje testy AB</h1>
+            <p>
+              Zarejestruj się i przeprowadź swoje testy AB. Utwórzenie testu
+              wygeneruje kod Javascript, który należy wkleić w sekcji Head
+              swojej strony. Kod wklejamy na Wersji Oryginalnej, Wersji
+              Testowej, oraz na stonie Wyniku.<br /><br /><br />
+            </p>
+            <a href="/register" class="btn">Zarejestruj się</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skrypt wykresu -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart").getContext("2d");
+      Chart.defaults.font.size = 14;
+      var myChart = new Chart(ctx, {
+        type: "line",
+
+        data: {
+          labels: ["19.09", "20.09", "21.09", "22.09", "23.09", "24.09"],
+          datasets: [
+            {
+              label: "Wersja 1",
+              data: [15, 16, 15, 16, 17, 18],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: ["rgba(255, 99, 132, 1)"],
+              borderWidth: 2,
+            },
+
+            {
+              label: "Wersja 2",
+              data: [6, 7, 8, 6, 5, 8],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: ["rgba(54, 162, 235, 1)"],
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+          plugins: {},
+          hoverRadius: 8,
+          hoverBackgroundColor: "yellow",
+          interaction: {
+            mode: "nearest",
+            intersect: false,
+            axis: "x",
+          },
+        },
+      });
+    </script>
+
+    <!-- Skrypt animacji SVG -->
+    <script src="{% static 'users/wyglad/anime.min.js' %}"></script>
+    <script>
+      let path = anime.path("#anime-p1");
+      anime({
+        targets: "#anime-emoji",
+        translateX: path("x"),
+        translateY: path("y"),
+        rotate: path("angle"),
+        easing: "linear",
+        duration: 3000,
+        endDelay: 3000,
+        scale: {
+          value: 0,
+          duration: 100,
+          delay: 2900,
+          easing: "easeInOutQuart",
+        },
+        loop: true,
+      });
+      let path2 = anime.path("#anime-p2");
+      anime({
+        targets: "#anime-emoji2",
+        translateX: path2("x"),
+        translateY: path2("y"),
+        rotate: path("angle"),
+        easing: "linear",
+        duration: 3000,
+        endDelay: 3000,
+        scale: {
+          value: 0,
+          duration: 100,
+          delay: 2900,
+          easing: "easeInOutQuart",
+        },
+        loop: true,
+      });
+      let path3 = anime.path("#anime-p3");
+      anime({
+        targets: "#anime-emoji3",
+        translateX: path3("x"),
+        translateY: path3("y"),
+        rotate: path("angle"),
+        easing: "linear",
+        duration: 3000,
+        delay: 3000,
+        width: {
+          value: "+=20px",
+          duration: 100,
+          easing: "easeInOutSine",
+          delay: 2900,
+        },
+        height: {
+          value: "+=20px",
+          duration: 100,
+          easing: "easeInOutSine",
+          delay: 2900,
+        },
+
+        loop: true,
+      });
+      let path4 = anime.path("#anime-p4");
+      anime({
+        targets: "#anime-emoji4",
+        translateX: path4("x"),
+        translateY: path4("y"),
+        rotate: path("angle"),
+        easing: "linear",
+        duration: 3000,
+        delay: 3000,
+        width: {
+          value: "+=20px",
+          duration: 100,
+          easing: "easeInOutSine",
+          delay: 2900,
+        },
+        height: {
+          value: "+=20px",
+          duration: 100,
+          easing: "easeInOutSine",
+          delay: 2900,
+        },
+        loop: true,
+      });
+    </script>
+    <script src="{% static 'users/wyglad/main.js' %}"></script>
+  </body>
+</html>

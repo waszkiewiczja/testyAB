@@ -1,0 +1,58 @@
+{% if user.is_authenticated %}
+<div class="main-menu">
+  <!-- Mobile Device -->
+  <div class="nav-mobile">
+    <div class="logo-mobile-menu"></div>
+    <div class="button-3lines-x">
+      <div class="nav-bars" id="mobile-menu">
+        <span class="bar" id="bar1"></span>
+        <span class="bar" id="bar2"></span>
+        <span class="bar" id="bar3"></span>
+      </div>
+    </div>
+  </div>
+  <!-- Een Mobile Device  -->
+  <!-- . -->
+  <!-- Computer -->
+  <div class="nav-computer">
+    <div class="main-menu-list">
+      <a href="{% url 'mojetesty:mojetestyindex'%}">Podsumowanie </a>
+    </div>
+    <div class="main-menu-list">
+      <a href="{% url 'mojetesty:create-new-test'%}">Utwórz test </a>
+    </div>
+    <div class="main-menu-list">
+      <a href="{% url 'logout' %}"> Wyloguj {{request.user}} </a>
+    </div>
+  </div>
+  <!-- End Computer -->
+</div>
+
+{% else %}
+<div class="main-menu">
+  <!-- Mobile Device -->
+  <div class="nav-mobile">
+    <div class="logo-mobile-menu"></div>
+    <div class="button-3lines-x">
+      <div class="nav-bars" id="mobile-menu">
+        <span class="bar" id="bar1"></span>
+        <span class="bar" id="bar2"></span>
+        <span class="bar" id="bar3"></span>
+      </div>
+    </div>
+  </div>
+  <!-- Een Mobile Device  -->
+  <!-- . -->
+  <!-- Computer -->
+  <div class="nav-computer">
+    <div class="main-menu-list">
+      <a href="{% url 'login' %}"> Logownaie</a>
+    </div>
+    <div class="main-menu-list">
+      <a href="{% url 'register' %}"> Rejestracja</a>
+    </div>
+  </div>
+  <!-- End Computer -->
+</div>
+
+{%endif%}

@@ -1,0 +1,27 @@
+{% extends 'users/main.html' %} {% load static %} {% block tresc %}
+<div class="main">
+  <div class="create-test">
+    <h1>Utwórz test:</h1>
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="create-new-test-forms">
+        <div class="new-test-form">
+          <div class="new-test-form-title">Nazwa testu:</div>
+          <div class="new-test-form-input">{{form.nazwa}}</div>
+        </div>
+        <div class="new-test-form">
+          <div class="new-test-form-title">Link do Wersji 1:</div>
+          <div class="new-test-form-input">{{form.link1}}</div>
+        </div>
+        <div class="new-test-form">
+          <div class="new-test-form-title">Link do Wersji 2:</div>
+          <div class="new-test-form-input">{{form.link2}}</div>
+        </div>
+      </div>
+      <div>
+        <input type="submit" value="Dodaj test" class="new-test-form-submit" />
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock tresc %} {% block page_scripts %} {%endblock page_scripts%}

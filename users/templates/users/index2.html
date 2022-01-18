@@ -1,0 +1,13 @@
+{% extends 'users/main.html' %}
+
+{% block tresc %}
+<h1>Test indexx index </h1>
+Dla wszystkich <br>
+
+{%if user.is_authenticated%}
+Tylko dla zalogowanych - {{request.user}}
+{%endif%}
+
+
+
+{% endblock tresc %}

@@ -1,0 +1,19 @@
+{% extends 'users/main.html' %} {% block tresc %}
+<div class="main">
+  <div class="create-test">
+    <h1>Zaloguj się</h1>
+    <form method="POST" action="{%url 'login'%}">
+      {% csrf_token %}
+      <input
+        type="text"
+        name="username"
+        placeholder="Nazwa użytkownika"
+      /><br /><br />
+      <input type="password" name="password" placeholder="Hasło" /><br />
+      <br />
+      <input type="submit" value="Login" class="login-submit" />
+    </form>
+  </div>
+</div>
+
+{% endblock tresc %}

@@ -1,0 +1,228 @@
+{% extends 'users/main.html' %} {% load static %} {% block tresc %}
+<div class="main">
+  <div class="results-ids">
+    <span style="display: none" id="user">{{request.user}}</span>
+    <span style="display: none" id="iduser">{{request.user.id}}</span>
+    <h1>Szczegóły testu:</h1>
+
+    <div class="results-id">
+      <div class="results-id-form">
+        <div>Nazwa:</div>
+        <div class="results-id-form-value">{{test.nazwa}}</div>
+      </div>
+      <div class="results-id-form">
+        <div>Id testu:</div>
+        <div class="results-id-form-value" id="idtest">{{test.id}}</div>
+      </div>
+      <div class="results-id-form">
+        <div>Utworzono:</div>
+        <div class="results-id-form-value">{{test.timestamp}}</div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="results-results-mobile">
+    <h1>Wyniki:</h1>
+
+    <div class="results-result-mobile results-result-mobile-border">
+      <div class="results-id-form">
+        <div>Wersja:</div>
+        <div class="results-id-form-value">{{test.link1}}</div>
+      </div>
+      <div class="results-id-form">
+        <div>Konwersja:</div>
+        <div class="results-id-form-value">
+          {{test.konwersja1 | floatformat:2}} %
+        </div>
+      </div>
+      <div class="results-id-form">
+        <div>Wyświetlenia:</div>
+        <div class="results-id-form-value">
+          {{test.ukonczenie_celu1}} / {{test.wyswietlenia_link1 }}
+        </div>
+      </div>
+    </div>
+
+    <div class="results-result-mobile">
+      <div class="results-id-form">
+        <div>Wersja:</div>
+        <div class="results-id-form-value">{{test.link2}}</div>
+      </div>
+      <div class="results-id-form">
+        <div>Konwersja:</div>
+        <div class="results-id-form-value">
+          {{test.konwersja2 | floatformat:2}} %
+        </div>
+      </div>
+      <div class="results-id-form">
+        <div>Wyświetlenia:</div>
+        <div class="results-id-form-value">
+          {{test.ukonczenie_celu2}} / {{test.wyswietlenia_link2 }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-results">
+    <h1>Wyniki:</h1>
+
+    <div class="results-result">
+      <div class="results-id-form">
+        <div>Wersja</div>
+        <div class="results-id-form-value" id="link1">{{test.link1}}</div>
+        <div class="results-id-form-value" id="link2">{{test.link2}}</div>
+        <div class="results-id-form-value">Suma</div>
+      </div>
+
+      <div class="results-id-form">
+        <div>Konwersja</div>
+        <div class="results-id-form-value">
+          {{test.konwersja1 | floatformat:2}} %
+        </div>
+        <div class="results-id-form-value">
+          {{test.konwersja2 | floatformat:2}} %
+        </div>
+        <div class="results-id-form-value">
+          {{test.suma_konwersji | floatformat:2}} %
+        </div>
+      </div>
+
+      <div class="results-id-form">
+        <div>Wyświetlenia</div>
+        <div class="results-id-form-value">
+          {{test.ukonczenie_celu1}} / {{test.wyswietlenia_link1 }}
+        </div>
+        <div class="results-id-form-value">
+          {{test.ukonczenie_celu2}} / {{test.wyswietlenia_link2 }}
+        </div>
+        <div class="results-id-form-value">
+          {{test.suma_ukonczenia_celow}} / {{test.suma_wyswietlenia_linkow }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="results-charts">
+    <h1>Wykres konwersji:</h1>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <div class="chart">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ data_konwersji|safe }},
+            datasets: [{
+                label: 'Wersja 1',
+                data: {{ suma_wersja1|safe }},
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            },
+            {
+                label: 'Wersja 2',
+                data: {{ suma_wersja2|safe }},
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+  </script>
+
+  <hr />
+  <div class="result-conversions">
+    <h1>Wyniki konwersji:</h1>
+    <div class="results-conversion">
+      <div class="results-id-form">
+        <div>Wersja 1</div>
+        {% for w1 in suma_wersja1 %}
+        <div class="results-id-form-value conversion_sum_br">{{w1}}</div>
+        {%endfor%}
+      </div>
+
+      <div class="results-id-form">
+        <div>Wersja 2</div>
+        {% for w2 in suma_wersja2 %}
+        <div class="results-id-form-value conversion_sum_br">{{w2}}</div>
+        {%endfor%}
+      </div>
+
+      <div class="results-id-form" id="conversion_sum">
+        <div>Suma konwersji</div>
+        {% for konwersja in suma_konwersji %}
+        <div class="results-id-form-value">{{konwersja}}</div>
+        {%endfor%}
+      </div>
+
+      <div class="results-id-form">
+        <div>Data</div>
+        {% for d in data_konwersji %}
+        <div class="results-id-form-value">{{d}}</div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <div class="result-code" id="code">
+    <h1>Kod testu:</h1>
+    <p>
+      Kod wklej za tagiem otwierającym < head > na stronie kontrolnej (głównej,
+      wariant A), stronie testowej (wariant B) oraz na stronie z wynikiem.
+    </p>
+    <hr />
+    <div id="myScript" class="code-script"></div>
+    <button class="code-button" id="myButton">Kopiuj kod</button>
+  </div>
+</div>
+
+{% endblock tresc %} {% block page_scripts %}
+
+<script
+  src="{% static 'mojetesty/js/szczegoly.js' %}"
+  type="text/javascript"
+></script>
+
+{%endblock page_scripts%}
