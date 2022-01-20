@@ -55,6 +55,3 @@ def registerPage(request):
     return render(request, 'users/register.html', context)
 
 
-def ajaxsave(request):
-    print('super hiper test')
-    print(request.POST)
